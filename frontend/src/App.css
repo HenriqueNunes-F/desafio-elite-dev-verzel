@@ -1,0 +1,416 @@
+.page {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 320px;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.auth-form input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.auth-form button {
+  padding: 0.6rem;
+  border-radius: 4px;
+  border: none;
+  background: #1a1a1a;
+  color: white;
+  cursor: pointer;
+}
+
+.auth-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form-error {
+  color: #c0392b;
+  font-size: 0.9rem;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.page-header h1 {
+  font-size: 1.5rem;
+}
+
+.page-header button {
+  margin-left: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-form button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background: #1a1a1a;
+  color: white;
+  cursor: pointer;
+}
+
+.event-list,
+.movie-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.event-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.event-card p {
+  margin: 0.25rem 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.event-card button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #c0392b;
+  background: white;
+  color: #c0392b;
+  cursor: pointer;
+}
+
+.event-card button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.event-card button.guest-cta {
+  border: none;
+  background: #1a1a1a;
+  color: white;
+}
+
+.movie-list button {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+.movie-list button.movie-selected {
+  border-color: #1a1a1a;
+  background: #f0f0f0;
+  font-weight: bold;
+}
+
+.reserve-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.reserve-form input {
+  width: 4rem;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.reserve-form button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  border: none;
+  background: #1a1a1a;
+  color: white;
+  cursor: pointer;
+}
+
+.reserve-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.checkout-summary {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.checkout-note {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.checkout-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.checkout-actions button {
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background: #1a1a1a;
+  color: white;
+  cursor: pointer;
+}
+
+.checkout-actions button.secondary {
+  background: white;
+  color: #1a1a1a;
+  border: 1px solid #ccc;
+}
+
+.checkout-actions button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.ticket-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ticket-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.ticket-card p {
+  margin: 0.25rem 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.ticket-card button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #c0392b;
+  background: white;
+  color: #c0392b;
+  cursor: pointer;
+}
+
+.ticket-card button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.ticket-historico-titulo {
+  font-size: 1rem;
+  color: #888;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+.ticket-list-historico {
+  opacity: 0.75;
+}
+
+.ticket-card-historico {
+  padding: 0.75rem 1rem;
+}
+
+.ticket-card-historico p {
+  font-size: 0.85rem;
+}
+
+.ticket-qr {
+  flex-shrink: 0;
+  background: white;
+  padding: 0.5rem;
+}
+
+.ticket-codigo {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: #f7f7f7;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+}
+
+.ticket-codigo-label {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 0.25rem;
+}
+
+.ticket-codigo-texto {
+  display: block;
+  font-size: 0.7rem;
+  word-break: break-all;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.ticket-codigo button {
+  margin-top: 0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: white;
+  color: #1a1a1a;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.portaria-event-select {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.portaria-event-select select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.portaria-contador {
+  font-size: 0.85rem;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.portaria-scanner {
+  max-width: 400px;
+  margin: 1rem 0;
+}
+
+.portaria-result {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.portaria-result button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background: #1a1a1a;
+  color: white;
+  cursor: pointer;
+}
+
+.portaria-result.result-ok {
+  background: #e6f4ea;
+  border-color: #34a853;
+}
+
+.portaria-result.result-warn {
+  background: #fef7e0;
+  border-color: #f9ab00;
+}
+
+.portaria-result.result-error {
+  background: #fce8e6;
+  border-color: #c0392b;
+}
+
+.portaria-manual-form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.portaria-manual-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.portaria-manual-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.portaria-manual-form button {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background: #1a1a1a;
+  color: white;
+  cursor: pointer;
+}
