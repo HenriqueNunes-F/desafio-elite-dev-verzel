@@ -4,6 +4,8 @@ Plataforma onde um organizador publica eventos (a partir de um catálogo de film
 
 Ver decisões de arquitetura e o raciocínio por trás delas em [`docs/plan.md`](docs/plan.md) e o registro de uso de IA em [`AI-USAGE.md`](AI-USAGE.md).
 
+**Deploy:** [desafio-elite-dev-verzel.vercel.app](https://desafio-elite-dev-verzel.vercel.app) (front) · [desafio-elite-dev-verzel-api.onrender.com](https://desafio-elite-dev-verzel-api.onrender.com) (API) — plano free do Render hiberna após 15min sem uso; a primeira requisição depois disso pode levar ~50s pra responder.
+
 ## Stack
 
 - **Back-end:** Node.js + Express, MySQL (via `mysql2`, sem ORM), JWT para autenticação.
@@ -27,7 +29,7 @@ Ver decisões de arquitetura e o raciocínio por trás delas em [`docs/plan.md`]
 - [x] Blindagem de autorização entre papéis (testado: cliente/portaria batendo em rotas de organizador, organizador em rota de portaria, cliente cancelando reserva de outro cliente — todos 403; sem token — 401)
 - [x] Testes automatizados nos dois pontos de maior risco: corrida de capacidade e máquina de estados do ticket (`backend/test/`, `npm test`)
 - [x] Passe de responsividade (header, tela da portaria testada em viewport de celular)
-- [ ] Deploy
+- [x] Deploy — frontend na Vercel, backend no Render, banco MySQL no Aiven (link no topo deste README)
 
 ## Como rodar localmente
 
