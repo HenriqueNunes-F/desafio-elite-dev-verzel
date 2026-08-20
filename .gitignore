@@ -5,11 +5,3 @@ dist/
 build/
 *.log
 .DS_Store
-
-# Material de estudo pessoal — não é entregável, fica só local
-docs/study-guide.md
-docs/study-guide.pdf
-docs/perguntas-praticas.md
-docs/codebase-map.md
-docs/codebase-map.pdf
-docs/desafio-como-trabalho-academico.md
