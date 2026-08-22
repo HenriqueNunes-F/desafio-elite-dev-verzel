@@ -5,8 +5,8 @@ const ingressoData = require('../data/ingressoData');
 const ingressoService = require('./ingressoService');
 
 async function criarReserva(clienteId, eventoId, quantidade) {
-  if (!quantidade || quantidade <= 0) {
-    const err = new Error('quantidade precisa ser maior que zero.');
+  if (!Number.isInteger(quantidade) || quantidade <= 0) {
+    const err = new Error('quantidade precisa ser um número inteiro maior que zero.');
     err.status = 400;
     throw err;
   }
@@ -33,6 +33,12 @@ async function criarReserva(clienteId, eventoId, quantidade) {
   });
 }
 async function pagarReserva(clienteId, reservaId, aprovar) {
+  if (typeof aprovar !== 'boolean') {
+    const err = new Error('aprovar é obrigatório e precisa ser true ou false.');
+    err.status = 400;
+    throw err;
+  }
+
   const reserva = await reservaData.buscarPorId(reservaId);
   if (!reserva) {
     const err = new Error('Reserva não encontrada.');

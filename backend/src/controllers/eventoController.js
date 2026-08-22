@@ -12,10 +12,19 @@ async function criar(req, res, next) {
 async function listarPublicos(req, res, next) {
   try {
     const { busca, local, precoMaximoCentavos } = req.query;
+
+    let precoMaximoCentavosNumero;
+    if (precoMaximoCentavos !== undefined) {
+      precoMaximoCentavosNumero = Number(precoMaximoCentavos);
+      if (!Number.isFinite(precoMaximoCentavosNumero) || precoMaximoCentavosNumero < 0) {
+        return res.status(400).json({ error: 'precoMaximoCentavos precisa ser um número maior ou igual a zero.' });
+      }
+    }
+
     const eventos = await eventoService.listarEventosPublicos({
       busca,
       local,
-      precoMaximoCentavos: precoMaximoCentavos ? Number(precoMaximoCentavos) : undefined
+      precoMaximoCentavos: precoMaximoCentavosNumero
     });
     res.json({ eventos });
   } catch (err) {

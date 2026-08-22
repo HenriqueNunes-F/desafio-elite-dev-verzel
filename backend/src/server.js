@@ -13,6 +13,7 @@ app.use(express.json());
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
 app.use('/api', rotas);
 
+app.use((req, res) => res.status(404).json({ error: 'Rota não encontrada.' }));
 app.use(tratadorDeErros);
 
 const porta = process.env.PORT || 3333;
