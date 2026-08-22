@@ -16,7 +16,11 @@ async function buscarPorSlugCompartilhamento(req, res, next) {
     if (!ingresso) {
       return res.status(404).json({ error: 'Ingresso não encontrado.' });
     }
-    res.json({ ingresso: ingressoService.anexarTokenQr(ingresso) });
+    // Rota pública, sem autenticação: nunca devolver token_qr/qr_jti aqui —
+    // isso equivaleria a entregar o ingresso funcional pra qualquer um com o
+    // link. Só os dados de exibição, sem nada que passe na portaria.
+    const { titulo, data_hora, local, situacao } = ingresso;
+    res.json({ ingresso: { titulo, data_hora, local, situacao } });
   } catch (err) {
     next(err);
   }
